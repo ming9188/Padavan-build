@@ -125,7 +125,7 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ALDRIVER/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SQM/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_MSD_LITE/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_MTR/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_IPERF3/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OC/d' .config
         sed -i '/CONFIG_FIRMWARE_MT7621_OC/d' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
@@ -179,7 +179,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=n" >> .config #ALDRIVER  ~3m
         echo "CONFIG_FIRMWARE_INCLUDE_SQM=y" >> .config #SQM
         echo "CONFIG_FIRMWARE_INCLUDE_MSD_LITE=y" >> .config #MSD_LITE
-        echo "CONFIG_FIRMWARE_INCLUDE_MTR=n" >> .config #MTR
+        echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config #IPERF3
         #CPU超频
         echo "CONFIG_FIRMWARE_INCLUDE_OC=y" >> .config #CPU超频开关
         echo 'CONFIG_FIRMWARE_MT7621_OC="0x3B2"' >> .config #此处填写对应频率的十六进制：1000Mhz=0x312 1100Mhz=0x362 1120Mhz=0x372 1200Mhz=0x3B2
