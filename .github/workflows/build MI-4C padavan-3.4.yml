@@ -123,7 +123,7 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_WIREGUARD/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ALDRIVER/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_MSD_LITE/d' .config
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_MTR/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_IPERF3/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_NAPT66/d' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
         ######################################################################
@@ -175,7 +175,7 @@ jobs:
         ##内网穿透服务##
         echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=n" >> .config #ALDRIVER  ~3m
         echo "CONFIG_FIRMWARE_INCLUDE_MSD_LITE=y" >> .config #MSD_LITE
-        echo "CONFIG_FIRMWARE_INCLUDE_MTR=n" >> .config #MTR
+        echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config #IPERF3
         echo "CONFIG_FIRMWARE_INCLUDE_NAPT66=y" >> .config #NAPT66
         #########################################################################################
         # 自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
