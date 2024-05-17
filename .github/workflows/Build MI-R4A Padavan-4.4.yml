@@ -12,6 +12,13 @@ on:
         description: "是否需要发布到Release? (不发布也可以到Artifacts下载)"
         default: 'yes'
         required: false
+      toolchain:
+        type: choice
+        description: 'select toolchain'
+        options:
+        - mipsel-linux-musl
+        - mipsel-linux-uclibc
+        default: mipsel-linux-musl
 env:
   TNAME: "${{ github.event.inputs.production }}"
   REPOSITORY_URL: https://github.com/vipshmily/padavan-4.4.git
@@ -63,6 +70,7 @@ jobs:
     - name: Prepare environment
       run: |
         sudo apt update
+        sudo apt upgrade
         sudo apt install libtool-bin gperf python3-docutils autopoint gettext ccache              
     - name: Clone source code
       run: |
