@@ -198,7 +198,7 @@ jobs:
         # echo "自定义项=y" >> .config
         #########################################################################################
         cd ${{ env.DIR }}
-        sudo make $m
+        sudo make $m TOOLCHAIN="${{ github.event.inputs.toolchain }}"
         cd ${{ env.DIR }}/trunk
         sudo mv -f images/*.trx /opt/images/
         done
