@@ -225,7 +225,7 @@ jobs:
         path: /opt/images        
     - name: Upload images to Releases
       if: ${{ github.event.inputs.release == 'yes' }}
-      uses: ncipollo/release-action@main
+      uses: ncipollo/action-gh-release@main
       with:
         name: ${{ env.NAME }}
         tag_name: ${{ env.TAG }}
