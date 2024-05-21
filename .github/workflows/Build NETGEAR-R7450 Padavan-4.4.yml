@@ -225,7 +225,7 @@ jobs:
         path: /opt/images        
     - name: Upload images to Releases
       if: ${{ github.event.inputs.release == 'yes' }}
-      uses: softprops/action-gh-release@main
+      uses: ncipollo/release-action@main
       with:
         name: ${{ env.NAME }}
         tag_name: ${{ env.TAG }}
