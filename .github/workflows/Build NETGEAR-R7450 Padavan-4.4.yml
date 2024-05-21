@@ -20,16 +20,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: hendrikmuhs/ccache-action@v1.2
+    - uses: actions/checkout@main
+    - uses: hendrikmuhs/ccache-action@main
       with:
           key: "${{ github.event.inputs.production }}-4.4"
-    - uses: actions/setup-go@v5
+    - uses: actions/setup-go@main
       with:
           go-version: '1.22'
           check-latest: true
           cache: false
-    - uses: actions/setup-node@v4
+    - uses: actions/setup-node@main
       with:
           node-version: 20
           check-latest: true          
@@ -176,7 +176,7 @@ jobs:
         ##内网穿透服务##
         echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=y" >> .config #ALDRIVER  ~3m
         echo "CONFIG_FIRMWARE_INCLUDE_SQM=y" >> .config #SQM
-        echo "CONFIG_FIRMWARE_INCLUDE_MSD_LITE=n" >> .config #MSD_LITE
+        echo "CONFIG_FIRMWARE_INCLUDE_MSD_LITE=y" >> .config #MSD_LITE
         echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config #IPERF3
         #CPU超频
         echo "CONFIG_FIRMWARE_INCLUDE_OC=y" >> .config #CPU超频开关
@@ -218,14 +218,14 @@ jobs:
         md5sum *.trx >> /opt/images/readme.txt || echo
         ls -l              
     - name : Upload images to Artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@main
       if: true
       with:
         name: ${{ env.NAME }}
         path: /opt/images        
     - name: Upload images to Releases
       if: ${{ github.event.inputs.release == 'yes' }}
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@main
       with:
         name: ${{ env.NAME }}
         tag_name: ${{ env.TAG }}
