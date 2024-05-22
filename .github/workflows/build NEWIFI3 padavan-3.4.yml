@@ -1,12 +1,12 @@
 # 注意：修改 default:    中的型号为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
-name: Build PSG1218 Padavan-3.4
+name: Build NEWIFI3 Padavan-3.4
 
 on:
   workflow_dispatch:
     inputs:
       production:
         description: 设置编译的固件型号,空格分隔.
-        default: "PSG1218"
+        default: "NEWIFI3"
         required: false
       release:
         description: "是否需要发布到Release? (不发布也可以到Artifacts下载)"
@@ -85,7 +85,7 @@ jobs:
         #else
         #exit 2 
         #fi
-        cp -f public/PSG1218.config ${{ env.DIR }}/trunk/configs/templates
+        cp -f public/NEWIFI3.config ${{ env.DIR }}/trunk/configs/templates
         cp -f public/shadowsocks.sh ${{ env.DIR }}/trunk/user/shadowsocks/scripts
         #cp -f public/adguardhome.sh ${{ env.DIR }}/trunk/user/adguardhome 
         cd ${{ env.DIR }}/trunk
