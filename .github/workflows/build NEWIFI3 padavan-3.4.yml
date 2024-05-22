@@ -13,8 +13,8 @@ on:
         default: 'yes'
         required: false
 env:
-  MHZ: 600               # CPU超频频率 必须为20的倍数
-  TNAME: "${{ github.event.inputs.production }}"
+  MHZ: 900               # CPU超频频率 必须为20的倍数
+  TNAME: ${{ github.event.inputs.production }}
   REPOSITORY_URL: https://github.com/vipshmily/Padavan-3.4-KVR.git
         
 jobs:
